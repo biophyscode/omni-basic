@@ -5,16 +5,16 @@ Automatic videomaker adapted for protein demo.
 """
 
 #---block: imports
-if not is_live:
+if not is_live or not os.path.basename(os.getcwd())=='calcs':
 	raise Exception('you must run this from jupyter in the factory')
 import json
 from config import bash
 try: import vmdmake
 except: 
 	#---clone vmdmake codes if they are absent
-	vmdmake_spot = os.path.join('calcs','vmdmake')
+	vmdmake_spot = os.path.join('vmdmake')
 	if os.path.isdir(vmdmake_spot): raise Exception('could not import vmdmake but %s exists'%vmdmake_spot)
-	else: bash('git clone http://github.com/bradleyrp/amx-vmd vmdmake',cwd='calcs')
+	else: bash('git clone http://github.com/bradleyrp/amx-vmd vmdmake')
 #---load the data for protein_rmsd to get trajectory files
 if 'data' not in globals(): data,calc = plotload('protein_rmsd')
 
