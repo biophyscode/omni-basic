@@ -60,6 +60,7 @@ def render_from_json(request_fn='video_requests.json',catalog_fn='video_catalog.
 				step = int(np.ceil(float(nframes)/nframes_max))
 				if step<1: raise Exception('negative step size')
 			else: step = 1
+			import vmdmake
 			view = vmdmake.VMDWrap(site=tempdir,gro=gro,xtc=xtc,tpr=tpr,
 				frames='',res=cut_spec.pop('resolution',(1000,1000)),step=step,**cut_spec.get('kwargs',{}))
 			view.do('load_dynamic','standard',*cut_spec.get('does',[]))
