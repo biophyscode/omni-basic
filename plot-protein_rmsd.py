@@ -22,6 +22,7 @@ for snum,sn in enumerate(data):
 	ax.set_xlabel(r'time (ns)')
 	ax.set_ylim(0,max_rmsd*1.1)
 	ax.set_ylabel(r'RMSD ($\mathrm{\AA}$)')
+ax.legend()
 # save the figure to disk along with metadata if desired
 picturesave('fig.%s'%plotname,work.plotdir,
 	backup=False,version=True,meta={})
