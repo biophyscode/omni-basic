@@ -4,7 +4,7 @@
 plotname = 'protein_rmsd'
 rmsd_bin_step = 0.1
 # load the upstream dat
-data,calc = plotload(plotname,work)
+data,calc = plotload(plotname)
 # make the plot
 axes,fig = square_tiles(1,figsize=(12,8))
 counter,xpos,xlim_left = 0,[],0
