@@ -14,8 +14,8 @@ def load():
 	"""Load the data."""
 	# condition for loading the data
 	# note that autoplot exposes everything in load to globals automatically
-	data,calc = plotload('undulations',work)
-	try: data_prot,_ = plotload('protein_abstractor',work)
+	data,calc = plotload('undulations')
+	try: data_prot,_ = plotload('protein_abstractor')
 	# not all bilayers have proteins
 	except: data_prot = {}
 
